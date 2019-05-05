@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a139385c18a340242959fc07294f35b0",
+    "revision": "a2cdb4f7a571f20b85733323c4af5a83",
     "url": "/cricviz/index.html"
   },
   {
