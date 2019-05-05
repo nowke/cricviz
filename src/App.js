@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import logo from "./logo.svg";
 
 import "./App.css";
 import Slider from "./components/Slider";
