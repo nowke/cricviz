@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cricviz/static/css/main.90d0d30d.chunk.css",
-    "main.js": "/cricviz/static/js/main.b1fda635.chunk.js",
-    "main.js.map": "/cricviz/static/js/main.b1fda635.chunk.js.map",
-    "runtime~main.js": "/cricviz/static/js/runtime~main.7d33cc5e.js",
-    "runtime~main.js.map": "/cricviz/static/js/runtime~main.7d33cc5e.js.map",
-    "static/js/2.e510689d.chunk.js": "/cricviz/static/js/2.e510689d.chunk.js",
-    "static/js/2.e510689d.chunk.js.map": "/cricviz/static/js/2.e510689d.chunk.js.map",
-    "index.html": "/cricviz/index.html",
-    "precache-manifest.e35edb7c8af89487fa28b863f084ac24.js": "/cricviz/precache-manifest.e35edb7c8af89487fa28b863f084ac24.js",
-    "service-worker.js": "/cricviz/service-worker.js",
-    "static/css/main.90d0d30d.chunk.css.map": "/cricviz/static/css/main.90d0d30d.chunk.css.map"
+    "main.css": "/cricviz/first-innings/static/css/main.90d0d30d.chunk.css",
+    "main.js": "/cricviz/first-innings/static/js/main.e1ad06d1.chunk.js",
+    "main.js.map": "/cricviz/first-innings/static/js/main.e1ad06d1.chunk.js.map",
+    "runtime~main.js": "/cricviz/first-innings/static/js/runtime~main.99274029.js",
+    "runtime~main.js.map": "/cricviz/first-innings/static/js/runtime~main.99274029.js.map",
+    "static/js/2.e91c4d6b.chunk.js": "/cricviz/first-innings/static/js/2.e91c4d6b.chunk.js",
+    "static/js/2.e91c4d6b.chunk.js.map": "/cricviz/first-innings/static/js/2.e91c4d6b.chunk.js.map",
+    "index.html": "/cricviz/first-innings/index.html",
+    "precache-manifest.4161fc677b7c8be310c8762f0889a9e0.js": "/cricviz/first-innings/precache-manifest.4161fc677b7c8be310c8762f0889a9e0.js",
+    "service-worker.js": "/cricviz/first-innings/service-worker.js",
+    "static/css/main.90d0d30d.chunk.css.map": "/cricviz/first-innings/static/css/main.90d0d30d.chunk.css.map"
   }
 }
