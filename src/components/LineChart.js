@@ -6,12 +6,27 @@ function LineChart({ year, data }) {
     <Plot
       data={[
         {
+          x: [...data.x, ...data.x.slice().reverse()],
+          y: [
+            ...data['z-1'],
+            ...data['z+1'].slice().reverse(),
+          ],
+          type: "scatter",
+          fill: "tonexty",
+          fillcolor: "rgba(0,176,246,0.2)",
+          line: { color: "transparent" },
+          showlegend: false,
+          name: "Error"
+        },
+        {
           x: data.x,
           y: data.y,
           type: "scatter",
           mode: "lines",
           hoverinfo: "skip",
-          marker: { color: "#2d3436" }
+          marker: { color: "#2d3436" },
+          showlegend: false,
+          name: "line"
         }
       ]}
       layout={{
@@ -22,11 +37,12 @@ function LineChart({ year, data }) {
         sliders: {
           visible: false
         },
-        xaxis: { showgrid: true, fixedrange: true },
+        xaxis: { showgrid: true, fixedrange: true, zeroline: false },
         yaxis: {
           showgrid: true,
           fixedrange: true,
-          range: [Math.min(data.y) - 20, Math.max(data.y) + 20]
+          zeroline: false,
+          range: [Math.min(...data['z-1']) - 20, Math.max(...data['z+1']) + 20]
         },
         shapes: [
           {
@@ -34,7 +50,7 @@ function LineChart({ year, data }) {
             x0: year,
             y0: 0,
             x1: year,
-            y1: 300,
+            y1: Math.max(...data['z+1']) + 20,
             line: {
               color: "#d63031",
               width: 3,
@@ -44,7 +60,7 @@ function LineChart({ year, data }) {
         ]
       }}
       style={{
-        height: 200,
+        height: 300,
         width: "100%"
       }}
       config={{
