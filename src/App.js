@@ -1,50 +1,50 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
 import "./App.css";
 import Slider from "./components/Slider";
 import LineChart from "./components/LineChart";
 import Histogram from "./components/Histogram";
 import Boxplot from "./components/Boxplot";
+import Selector from "./components/Selector";
 import avg_data from "./matches_avg.json";
 import histo_data from "./matches_histo.json";
+import teams from "./teams.json";
+import {
+  Container,
+  Header,
+  Title,
+  MetaContainer,
+  DetailContainer,
+  StatsContainer,
+  SelectContainer,
+  SelectWrapper
+} from "./styles";
 
-const Container = styled.div`
-  margin: 0 auto 10px auto;
-  border: 1px solid #2d3436;
-  max-width: 1000px;
-  width: 90%;
-  padding: 10px;
-`;
-
-const Header = styled.header`
-  margin: 5px auto 0 auto;
-  border: 1px solid #2d3436;
-  max-width: 1000px;
-  width: 90%;
-  padding: 10px;
-  background: #2d3436;
-  color: #fff;
-`;
-
-const Title = styled.span`
-  display: block;
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 8px;
-`;
+const data = [
+  { label: "Teams (All)", value: "*" },
+  ...teams.map(i => ({ label: i, value: i }))
+];
 
 function App() {
-  const [value, setValue] = useState(1971);
+  const [year, setYear] = useState(1971);
   const [width, setWidth] = useState(0);
+  const [team, setTeam] = useState(data[0]);
   const onChange = e => {
-    setValue(e.target.value);
+    setYear(e.target.value);
     setWidth(_input.current.clientWidth);
   };
   const _input = React.createRef();
-  const avg = histo_data[value].avg.toFixed(2);
-  const std = histo_data[value].std.toFixed(2);
-  const { max, min, range } = histo_data[value];
+  const histo = histo_data[year][team.value] || {
+    data: [[0], [0]],
+    avg: 0,
+    std: 0,
+    min: 0,
+    max: 0,
+    range: 0
+  };
+  const avg = histo.avg.toFixed(2);
+  const std = histo.std.toFixed(2);
+  const { max, min, range } = histo;
 
   return (
     <div className="App">
@@ -52,22 +52,33 @@ function App() {
         <Title>
           Cricket ODI Matches - First innings scores distribution by year
         </Title>
-        <strong>&nbsp;&nbsp;&nbsp;Mean:</strong> {avg},
-        <strong>&nbsp;&nbsp;&nbsp;Std. dev:</strong> {std}
-        <strong>&nbsp;&nbsp;&nbsp;Max:</strong> {max},
-        <strong>&nbsp;&nbsp;&nbsp;Min:</strong> {min}
-        <strong>&nbsp;&nbsp;&nbsp;Range:</strong> {range}
       </Header>
+      <MetaContainer>
+        <DetailContainer>
+          <StatsContainer>
+            <strong>&nbsp;&nbsp;&nbsp;Mean:</strong> {avg},
+            <strong>&nbsp;&nbsp;&nbsp;Std. dev:</strong> {std},
+            <strong>&nbsp;&nbsp;&nbsp;Max:</strong> {max},
+            <strong>&nbsp;&nbsp;&nbsp;Min:</strong> {min}
+            <strong>&nbsp;&nbsp;&nbsp;Range:</strong> {range}
+          </StatsContainer>
+          <SelectContainer>
+            <SelectWrapper>
+              <Selector value={team} data={data} onChange={t => setTeam(t)} />
+            </SelectWrapper>
+          </SelectContainer>
+        </DetailContainer>
+      </MetaContainer>
       <Container>
-        <Histogram data={histo_data} year={value} />
-        <Boxplot data={histo_data} year={value} />
+        <Histogram data={histo} team={team.value} />
+        <Boxplot data={histo} />
         <Slider
-          value={value}
+          year={year}
           width={width}
           onChange={onChange}
           inputRef={_input}
         />
-        <LineChart value={value} data={avg_data} />
+        <LineChart year={year} data={avg_data[team.value]} />
       </Container>
     </div>
   );

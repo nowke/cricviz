@@ -15,7 +15,6 @@ const Label = styled.span`
   font-size: 1.5em;
   transform-origin: center center;
   left: ${props => {
-    console.log(props.width);
     const left =
       ((props.value - props.min) * (props.width - 145)) /
       (props.max - props.min);
@@ -105,17 +104,17 @@ const Input = styled.input`
   }
 `;
 
-function Slider({ value, width, onChange, inputRef }) {
+function Slider({ year, width, onChange, inputRef }) {
   return (
     <div>
-      <Label min={1971} max={2019} value={value} width={width}>
-        {value}
+      <Label min={1971} max={2019} value={year} width={width}>
+        {year}
       </Label>
       <div style={{ width: "100%" }}>
         <Input
           type="range"
           ref={inputRef}
-          value={value}
+          value={year}
           min={1971}
           max={2019}
           onChange={onChange}

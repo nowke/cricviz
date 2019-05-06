@@ -1,9 +1,8 @@
 import React from "react";
 import Plot from "react-plotly.js";
 
-function Boxplot({ data, year }) {
-  const data_to_render = data[year];
-  const data_combined = [...data_to_render.data[0], ...data_to_render.data[1]];
+function Boxplot({ data }) {
+  const data_combined = [...data.data[0], ...data.data[1]];
   return (
     <Plot
       data={[

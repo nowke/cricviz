@@ -1,7 +1,7 @@
 import React from "react";
 import Plot from "react-plotly.js";
 
-function LineChart({ value, data }) {
+function LineChart({ year, data }) {
   return (
     <Plot
       data={[
@@ -16,20 +16,24 @@ function LineChart({ value, data }) {
       ]}
       layout={{
         margin: {
-          t: 0
+          t: 10
         },
         autosize: true,
         sliders: {
           visible: false
         },
         xaxis: { showgrid: true, fixedrange: true },
-        yaxis: { showgrid: true, fixedrange: true, range: [160, 280] },
+        yaxis: {
+          showgrid: true,
+          fixedrange: true,
+          range: [Math.min(data.y) - 20, Math.max(data.y) + 20]
+        },
         shapes: [
           {
             type: "line",
-            x0: value,
+            x0: year,
             y0: 0,
-            x1: value,
+            x1: year,
             y1: 300,
             line: {
               color: "#d63031",

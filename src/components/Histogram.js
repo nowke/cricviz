@@ -1,11 +1,10 @@
 import React from "react";
 import Plot from "react-plotly.js";
 
-function Histogram({ data, year }) {
-  const data_to_render = data[year];
-  const within = data_to_render.data[0];
-  const outside = data_to_render.data[1];
-  const { avg } = data_to_render;
+function Histogram({ data, team }) {
+  const within = data.data[0];
+  const outside = data.data[1];
+  const { avg } = data;
   return (
     <Plot
       data={[
@@ -46,7 +45,7 @@ function Histogram({ data, year }) {
         autosize: true,
         showlegend: true,
         legend: {
-          orientation: 'h'
+          orientation: "h"
         },
         margin: {
           t: 10,
@@ -63,7 +62,7 @@ function Histogram({ data, year }) {
             x0: avg,
             y0: 0,
             x1: avg,
-            y1: 15,
+            y1: team === '*' ? 16 : 6,
             line: {
               color: "#d63031",
               width: 3,
