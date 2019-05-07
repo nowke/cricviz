@@ -50,7 +50,15 @@ function App() {
     <div className="App">
       <Header>
         <Title>
-          Cricket ODI Matches - First innings scores distribution by year
+          Cricket ODI Matches - First innings scores distribution by year&nbsp;&nbsp;
+          <a
+            href="https://github.com/nowke/cricviz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'inline-block', color: '#fff' }}
+          >
+            [GitHub]
+          </a>
         </Title>
       </Header>
       <MetaContainer>
