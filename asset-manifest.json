@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/cricviz/static/css/main.90d0d30d.chunk.css",
-    "main.js": "/cricviz/static/js/main.b1fda635.chunk.js",
-    "main.js.map": "/cricviz/static/js/main.b1fda635.chunk.js.map",
+    "main.js": "/cricviz/static/js/main.3084e0c1.chunk.js",
+    "main.js.map": "/cricviz/static/js/main.3084e0c1.chunk.js.map",
     "runtime~main.js": "/cricviz/static/js/runtime~main.7d33cc5e.js",
     "runtime~main.js.map": "/cricviz/static/js/runtime~main.7d33cc5e.js.map",
     "static/js/2.e510689d.chunk.js": "/cricviz/static/js/2.e510689d.chunk.js",
     "static/js/2.e510689d.chunk.js.map": "/cricviz/static/js/2.e510689d.chunk.js.map",
     "index.html": "/cricviz/index.html",
-    "precache-manifest.e35edb7c8af89487fa28b863f084ac24.js": "/cricviz/precache-manifest.e35edb7c8af89487fa28b863f084ac24.js",
+    "precache-manifest.f5547516c228bf611843c8fe0f6d083f.js": "/cricviz/precache-manifest.f5547516c228bf611843c8fe0f6d083f.js",
     "service-worker.js": "/cricviz/service-worker.js",
     "static/css/main.90d0d30d.chunk.css.map": "/cricviz/static/css/main.90d0d30d.chunk.css.map"
   }

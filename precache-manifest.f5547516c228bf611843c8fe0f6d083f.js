@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f70f8f8c1238bb4771ad1bdb1c14f73c",
+    "revision": "ce758f9cc94627e0b660b09ca1da4d78",
     "url": "/cricviz/index.html"
   },
   {
-    "revision": "e0ba443c47b5d31f3234",
+    "revision": "c49c6a2146294636c0b7",
     "url": "/cricviz/static/css/main.90d0d30d.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cricviz/static/js/2.e510689d.chunk.js"
   },
   {
-    "revision": "e0ba443c47b5d31f3234",
-    "url": "/cricviz/static/js/main.b1fda635.chunk.js"
+    "revision": "c49c6a2146294636c0b7",
+    "url": "/cricviz/static/js/main.3084e0c1.chunk.js"
   },
   {
     "revision": "c351f01f5c27efbb630b",
